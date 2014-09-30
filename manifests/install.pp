@@ -46,6 +46,10 @@ class logitechmediaserver::install {
     ensure => present,
   }
 
+  package { 'libio-interface-perl':
+    ensure => present,
+  }
+
   package { 'libjson-xs-perl':
     ensure => present,
   }
