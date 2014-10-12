@@ -10,6 +10,8 @@ describe 'logitechmediaserver', :type => :class do
     it { should contain_service('logitechmediaserver')
         .with_ensure('running')
         .with_enable('true')
+        .with_hasstatus('false')
+        .with_pattern('squeezeboxserver')
     }
   end
 
@@ -19,6 +21,8 @@ describe 'logitechmediaserver', :type => :class do
     it { should contain_service('logitechmediaserver')
         .with_ensure('running')
         .with_enable('false')
+        .with_hasstatus('false')
+        .with_pattern('squeezeboxserver')
     }
   end
 
@@ -28,6 +32,8 @@ describe 'logitechmediaserver', :type => :class do
     it { should contain_service('logitechmediaserver')
         .with_ensure('stopped')
         .with_enable('true')
+        .with_hasstatus('false')
+        .with_pattern('squeezeboxserver')
     }
   end
 end
