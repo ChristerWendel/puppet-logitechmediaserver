@@ -16,6 +16,15 @@ class logitechmediaserver::configure {
           '/usr/share/squeezeboxserver/CPAN/Sub/Name.pm',
           '/usr/share/squeezeboxserver/CPAN/Template.pm',
           '/usr/share/squeezeboxserver/CPAN/Template/Stash/XS.pm']:
-            ensure => absent,
+    ensure => absent,
+  }
+
+  @file { '/etc/logstash/conf.d/logitechmediaserver.conf':
+    ensure => present,
+    owner  => 'logstash',
+    group  => 'logstash',
+    mode   => '0644',
+    source => 'puppet:///modules/logitechmediaserver/logstash.conf',
+    tag    => [logstash],
   }
 }
