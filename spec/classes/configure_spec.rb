@@ -7,42 +7,6 @@ describe 'logitechmediaserver', :type => :class do
   end
 
   context 'with default parameters' do
-    it { should contain_file('/usr/share/squeezeboxserver/CPAN/DBD/SQLite.pm')
-      .with_ensure('absent')
-    }
-
-    it { should contain_file('/usr/share/squeezeboxserver/CPAN/DBI.pm')
-      .with_ensure('absent')
-    }
-
-    it { should contain_file('/usr/share/squeezeboxserver/CPAN/EV.pm')
-      .with_ensure('absent')
-    }
-
-    it { should contain_file('/usr/share/squeezeboxserver/CPAN/HTML/Parser.pm')
-      .with_ensure('absent')
-    }
-
-    it { should contain_file('/usr/share/squeezeboxserver/CPAN/IO/Interface.pm')
-      .with_ensure('absent')
-    }
-
-    it { should contain_file('/usr/share/squeezeboxserver/CPAN/JSON/XS.pm')
-      .with_ensure('absent')
-    }
-
-    it { should contain_file('/usr/share/squeezeboxserver/CPAN/Sub/Name.pm')
-      .with_ensure('absent')
-    }
-
-    it { should contain_file('/usr/share/squeezeboxserver/CPAN/Template.pm')
-      .with_ensure('absent')
-    }
-
-    it { should contain_file('/usr/share/squeezeboxserver/CPAN/Template/Stash/XS.pm')
-      .with_ensure('absent')
-    }
-
     it { should_not contain_file('/etc/logstash/conf.d/logitechmediaserver.conf')
       .with_ensure('present')
     }
